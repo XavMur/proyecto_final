@@ -1,21 +1,35 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 .footer {
-  background-color: #333; /* Set your desired background color */
-  color: #fff; /* Set text color */
-  width: 100%; /* Make the footer fill the width of the screen */
-  padding: 20px 0; /* Add some padding for better appearance */
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px 0;
 }
 
 .container {
-  max-width: 1200px; /* Optional: Add a max-width to center content */
-  margin: 0 auto; /* Optional: Center the content */
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.search-bar{
+.search-bar {
   border-radius: 2px;
 }
-.search-container{
+.search-container {
   display: flex;
+  flex-grow: 1;
+}
+
+.nav-bar {
+  background-color: black;
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.button-nav {
+  display: flex;
+  margin-left: 1rem;
 }

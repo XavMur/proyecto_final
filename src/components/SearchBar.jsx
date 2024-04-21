@@ -3,15 +3,15 @@ import { FaSearch } from "react-icons/fa";
 import ButtonComponent from "./ButtonComponent";
 import InputComponent from "./InputComponent";
 
-export const SearchBar = () => {
+export const SearchBar = ({ widthValue }) => {
   return (
     <>
-        <div className="search-container">
-            <InputComponent widthValue = {20} />
-            <ButtonComponent buttonBody={<FaSearch />} />
-        </div>
+      <div className="search-container">
+        <InputComponent widthValue={widthValue} />
+        <ButtonComponent buttonBody={<FaSearch />} />
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default SearchBar;
