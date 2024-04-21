@@ -4,7 +4,7 @@ import { FaCartPlus } from "react-icons/fa";
 export const Navbar = () => {
   return (
     <div className="nav-bar">
-      <SearchBar />
+      <SearchBar widthValue={40} />
       <div className="button-nav">
         <ButtonComponent buttonBody="log in" />
         <ButtonComponent buttonBody={<FaCartPlus />} />
