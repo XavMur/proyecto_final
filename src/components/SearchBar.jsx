@@ -1,10 +1,16 @@
+import { useState } from "react";
+import { FaSearch } from "react-icons/fa";
 
 export const SearchBar = () => {
+    const [input, setInput] = useState("");
   return (
     <>
         <form>
-            <input placeholder="¿Qué estás buscando?"/>
-            <button className="btn btn-primary">asdasd</button>
+            <input 
+                className="search-bar" 
+                placeholder="¿Qué estás buscando?"
+                value={input}
+                onChange={(e)=>{setInput(e.target.value)}}/>
         </form>
     </>
   )

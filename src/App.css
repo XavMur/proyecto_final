@@ -13,3 +13,9 @@
   max-width: 1200px; /* Optional: Add a max-width to center content */
   margin: 0 auto; /* Optional: Center the content */
 }
+.search-bar{
+  border-radius: 2px;
+}
+.search-bar:hover{
+  background-color: aquamarine;
+}
