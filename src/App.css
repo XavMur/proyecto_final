@@ -6,7 +6,7 @@
   background-color: #333;
   color: #fff;
   width: 100%;
-  padding: 20px 0;
+  padding: 1%;
 }
 
 .container {
@@ -62,3 +62,17 @@
 position: relative;
 }
 
+
+.main {
+  min-height: 80vh;
+}
+.main-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.main-grid-item {
+  background-color: gray;
+  border: 15px solid white;
+  height: 20vh;
+}
