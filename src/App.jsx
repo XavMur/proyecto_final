@@ -1,9 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import Navbar from "./components/Navbar";
+import './App.css'
+import Footer from './components/Footer' 
+import SearchBar from './components/SearchBar'
 
 function App() {
-  return <Navbar></Navbar>;
+
+  return (
+    <>
+      <h1>Hello World</h1>
+      <SearchBar />
+      <Footer />
+    </>
+  )
 }
 
 export default App;
