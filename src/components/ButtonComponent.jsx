@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 
-const ButtonComponent = ({ buttonName }) => {
+const ButtonComponent = ({ buttonBody }) => {
   const [buttonText, setButtonText] = useState("");
   useEffect(() => {
-    setButtonText(buttonName);
-  }, [buttonName]);
-  return <Button variant="outline-info">{buttonText}</Button>;
+    setButtonText(buttonBody);
+  }, [buttonBody]);
+  return <Button variant="outline-info">{buttonBody}</Button>;
 };
 
 export default ButtonComponent;
