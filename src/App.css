@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -13,10 +13,24 @@
   max-width: 1200px; /* Optional: Add a max-width to center content */
   margin: 0 auto; /* Optional: Center the content */
 }
-.search-bar{
+.search-bar {
   border-radius: 2px;
-  width: 50%;
+  width: 100%;
 }
-.search-container{
+.search-container {
   display: flex;
+}
+
+.nav-bar {
+  width: 100%;
+  background-color: black;
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-nav {
+  display: flex;
+  flex-grow: 1;
+  margin-left: 1rem;
 }
