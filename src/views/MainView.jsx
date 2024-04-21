@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import MainViewItemComponent from "../components/MainViewItemComponent";
 
 const MainView = () => {
   return (
@@ -8,26 +9,7 @@ const MainView = () => {
       <Navbar />
       <div className="main">
         <div className="main-grid-container">
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
-          <div className="main-grid-item">aaa</div>
+          <MainViewItemComponent />
         </div>
       </div>
       <Footer />
