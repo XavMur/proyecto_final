@@ -1,22 +1,15 @@
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import ButtonComponent from "./ButtonComponent";
+import InputComponent from "./InputComponent";
 
 export const SearchBar = () => {
-  const [input, setInput] = useState("");
   return (
     <>
-      <form className="search-container">
-        <input
-          className="form-control search-bar"
-          placeholder="¿Qué estás buscando?"
-          value={input}
-          onChange={(e) => {
-            setInput(e.target.value);
-          }}
-        />
+      <div className="search-container">
+        <InputComponent widthValue={20} />
         <ButtonComponent buttonBody={<FaSearch />} />
-      </form>
+      </div>
     </>
   );
 };
