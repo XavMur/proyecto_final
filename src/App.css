@@ -52,15 +52,14 @@
 .product-carousel {
   grid-area: pcarousel;
   background-color: black;
+  height: 100%;
 }
 .product-description {
   grid-area: pdescription;
   background-color: #6d3a3a;
   overflow: auto;
 }
-.carousel-indicators {
-  position: relative;
-}
+
 
 .main {
   min-height: 80vh;
