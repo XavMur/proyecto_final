@@ -60,13 +60,21 @@
   overflow: auto;
 }
 
-
 .main {
   min-height: 80vh;
   background-color: #a1d4f2;
 }
 .main-item {
+  margin-top: 10px;
   min-height: 20vh;
   max-height: 50vh;
   text-align: center;
+}
+
+.main-item-container:hover {
+  cursor: pointer;
+}
+
+.item-lint {
+  display: inline;
 }
