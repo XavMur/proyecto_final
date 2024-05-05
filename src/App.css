@@ -68,11 +68,13 @@ position: relative;
 }
 .main-grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .main-grid-item {
   background-color: gray;
   border: 15px solid white;
-  height: 20vh;
+  min-height: 20vh;
+  max-height: 50vh;
+  text-align: center;
 }
