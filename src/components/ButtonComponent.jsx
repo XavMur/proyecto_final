@@ -6,7 +6,11 @@ const ButtonComponent = ({ buttonBody }) => {
   useEffect(() => {
     setButtonValue(buttonBody);
   }, [buttonBody]);
-  return <Button variant="outline-info">{buttonValue}</Button>;
+  return (
+    <Button style={{ marginRight: "10px" }} variant="outline-info">
+      {buttonValue}
+    </Button>
+  );
 };
 
 export default ButtonComponent;
