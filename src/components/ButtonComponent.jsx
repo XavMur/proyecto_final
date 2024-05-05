@@ -1,7 +1,5 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
-import { LoginContext } from "../context/LoginContext";
 
 const ButtonComponent = ({
   buttonBody,
@@ -9,15 +7,16 @@ const ButtonComponent = ({
   width = "auto",
   height = "auto",
   variant = "outline-info",
+  onClick = () => {},
 }) => {
   const [buttonValue, setButtonValue] = useState("");
-  const { login, setLogin } = useContext(LoginContext);
-  const navigate = useNavigate();
-  const changeRoute = (path) => {
-    navigate(path);
-  };
-  const handleLogin = () => {
-    setLogin(true);
+
+  const handleClick = () => {
+    if (buttonBody == "log in") {
+      handleLogin();
+    } else {
+      changeRoute(path);
+    }
   };
 
   useEffect(() => {
@@ -28,9 +27,7 @@ const ButtonComponent = ({
     <Button
       style={{ marginRight: "10px", width: width, height: height }}
       variant={variant}
-      onClick={() =>
-        buttonBody == "log in" ? handleLogin() : changeRoute(path)
-      }
+      onClick={() => onClick()}
     >
       {buttonValue}
     </Button>
