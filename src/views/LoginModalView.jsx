@@ -14,10 +14,13 @@ const LoginModalView = () => {
   const handleClose = () => {
     setLogin(false);
     setRegister(false);
+    setRegistered(false);
   };
   const handleAccess = () => {
     if (email == "registered@gmail.com") {
       setRegister(true);
+      setDisabled(false);
+      setRegistered(false);
     }
   };
 
@@ -89,6 +92,7 @@ const LoginModalView = () => {
               ></Form.Control>
               <div className="modal-button">
                 <ButtonComponent
+                  disabled={disabled}
                   buttonBody={"Continuar"}
                   width="100%"
                   height="10%"
