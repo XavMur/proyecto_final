@@ -10,7 +10,7 @@ export const ProductView = () => {
     },
     {
         "id":2,
-        "img":'https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg',
+        "img":'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Ronaldinho_11feb2007.jpg/200px-Ronaldinho_11feb2007.jpg',
         "title":"BBB",
         "description":"XXX"
     }]
@@ -20,7 +20,7 @@ export const ProductView = () => {
             Name
         </div>
         <div className="product-carousel">
-            <CarouselComponent items={items} />
+            <CarouselComponent items={items} height={'400px'} />
             
         </div>
         <div className="product-description">

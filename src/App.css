@@ -59,9 +59,7 @@
   background-color: #6d3a3a;
   overflow: auto;
 }
-.carousel-indicators {
-  position: relative;
-}
+
 
 .main {
   min-height: 80vh;
