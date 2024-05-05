@@ -8,9 +8,22 @@ export const CardComponent = ({currency,price,condition,quantity,shipping,delive
             <h5 className="card-title">{currency} {price}</h5>
             <p className="card-text">Condition: {condition} </p>
             <p className="card-text" style={{display:"flex"}}>Quantity: <span className="quantity">{quantity}</span> </p>
-            <div style={{display:"flex", flexDirection:"column",alignItems:"center", marginBottom:"5%"}}>
-                <ButtonComponent buttonBody={"Buy It Now"}/>
-                <ButtonComponent buttonBody={"Add To Cart"}/> 
+            <div style={{display:"flex", flexDirection:"column", marginBottom:"5%"}}>
+                <ButtonComponent 
+                    buttonBody={"Buy It Now"}
+                    path = {""}
+                    width = {"auto"}
+                    height = {"auto"}
+                    variant = {"primary"}
+                />
+                <br/>
+                <ButtonComponent 
+                    buttonBody={"Add To Cart"}
+                    path = {""}
+                    width = {"auto"}
+                    height = {"auto"}
+                    variant = {"primary"}
+                /> 
             </div>    
             <div className="card-detail">
                 <strong style={{marginRight:"10%"}}>Shipping:</strong> 
