@@ -33,48 +33,41 @@
   display: flex;
   margin-left: 1rem;
 }
-.product-view{
+.product-view {
   display: grid;
-  grid-template-areas: 
-  "pname pname"
-  "pcarousel pdescription"
-  "pcarousel pdescription";
+  grid-template-areas:
+    "pname pname"
+    "pcarousel pdescription"
+    "pcarousel pdescription";
   grid-template-columns: 5fr 5fr;
   grid-template-rows: 2fr 5fr 5fr;
   height: 100vh;
   width: 100%;
 }
 
-.product-name{
+.product-name {
   grid-area: pname;
   background-color: #a1d4f2;
 }
-.product-carousel{
-  grid-area: pcarousel; 
+.product-carousel {
+  grid-area: pcarousel;
   background-color: black;
   height: 100%;
 }
-.product-description{
+.product-description {
   grid-area: pdescription;
   background-color: #6d3a3a;
   overflow: auto;
 }
 .carousel-indicators {
-position: relative;
+  position: relative;
 }
-
 
 .main {
   min-height: 80vh;
+  background-color: #a1d4f2;
 }
-.main-grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.main-grid-item {
-  background-color: gray;
-  border: 15px solid white;
+.main-item {
   min-height: 20vh;
   max-height: 50vh;
   text-align: center;
