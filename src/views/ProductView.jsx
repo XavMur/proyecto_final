@@ -1,5 +1,6 @@
 import CardComponent from "../components/CardComponent";
 import CarouselComponent from "../components/CarouselComponent";
+import MainViewItemComponent from "../components/MainViewItemComponent";
 import SellerTag from "../components/SellerTag";
 
 export const ProductView = () => {
@@ -17,26 +18,66 @@ export const ProductView = () => {
         "description":"XXX"
     }]
   return (
-    <div className="product-view">
-        <div className="product-carousel">
-            <CarouselComponent items={items} height={'100vh'} width={"90%"} />
-            
+    <>
+        <div className="product-view">
+            <div className="product-carousel">
+                <CarouselComponent items={items} height={'100vh'} width={"90%"} />
+            </div>
+            <div className="product-description">
+                <h2 className="product-title">
+                    Product Title
+                </h2>
+                <SellerTag />
+                <div style={{display:"flex",justifyContent:"center"}}>
+                    <CardComponent 
+                        currency={"US"}
+                        price={"$599.99"}
+                        condition={"New"}
+                        quantity={"1"}
+                        shipping={"US $52.00 (approx Bs. 358.67) USPS First Class Mail International / First Class Package International Service. See detailsfor shipping International shipment of items may be subject to customs processing and additional charges. Located in: Peoria, Arizona, United States"}
+                        delivery={
+                            "Estimated between Tue, May 21 and Mon, Jun 17 to 00000 Please note the delivery estimate is greater than 10 business days. Please allow additional time if international delivery is subject to customs processing."}
+                        returns={"30 days returns. Buyer pays for return shipping"}
+                        payments={[{"img":"aaa","desc":"aaa"},{"img":"bbb","desc":"bbb"}]}
+                    />
+                </div>
+            </div>
         </div>
-        <div className="product-description">
-            <h2 className="product-title">
-                Product Title
-            </h2>
-            <SellerTag />
-            <div style={{display:"flex",justifyContent:"center"}}>
-                <CardComponent 
-                    currency={"US"}
-                    price={"599.99"}
-                    condition={"New"}
-                    quantity={"1"}
+        <br/>
+        <div>
+            <h4 style={{marginLeft:"1%"}}>Productos Relacionados</h4>
+            <div className="row" style={{ maxWidth: "99%"}}>
+                <MainViewItemComponent
+                    image={
+                    "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
+                    }
+                    title={"Nombre del producto"}
+                    price={1000}
+                />
+                <MainViewItemComponent
+                    image={
+                    "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
+                    }
+                    title={"Nombre del producto"}
+                    price={1000}
+                />
+                <MainViewItemComponent
+                    image={
+                    "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
+                    }
+                    title={"Nombre del producto"}
+                    price={1000}
+                />
+                <MainViewItemComponent
+                    image={
+                    "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
+                    }
+                    title={"Nombre del producto"}
+                    price={1000}
                 />
             </div>
         </div>
-    </div>
+    </>
   )
 }
 
