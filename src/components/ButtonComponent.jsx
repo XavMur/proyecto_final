@@ -7,6 +7,7 @@ const ButtonComponent = ({
   width = "auto",
   height = "auto",
   variant = "outline-info",
+  disabled = false,
   onClick = () => {},
 }) => {
   const [buttonValue, setButtonValue] = useState("");
@@ -28,6 +29,7 @@ const ButtonComponent = ({
       style={{ marginRight: "10px", width: width, height: height }}
       variant={variant}
       onClick={() => onClick()}
+      disabled={disabled}
     >
       {buttonValue}
     </Button>
