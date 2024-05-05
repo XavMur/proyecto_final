@@ -6,7 +6,7 @@ export const Navbar = () => {
     <div className="nav-bar">
       <SearchBar widthValue={40} />
       <div className="button-nav">
-        <ButtonComponent buttonBody="log in" path="/login" />
+        <ButtonComponent buttonBody="log in" />
         <ButtonComponent buttonBody={<FaCartPlus />} />
       </div>
     </div>

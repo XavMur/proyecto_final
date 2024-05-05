@@ -67,7 +67,7 @@
   overflow: auto;
 }
 .product-title {
-  padding-top: 0.5rem;  
+  padding-top: 0.5rem;
   text-align: center;
 }
 .quantity {
@@ -82,7 +82,7 @@
   display: flex;
   flex-direction: column;
 }
-.seller-tag{
+.seller-tag {
   border: 1px solid gray;
   border-radius: 5px;
   display: flex;
@@ -103,6 +103,7 @@
 }
 .main-item {
   margin-top: 10px;
+  margin-bottom: 10px;
   min-height: 20vh;
   max-height: 50vh;
   text-align: center;
@@ -116,6 +117,9 @@
   display: inline;
 }
 
+.modal-button {
+  margin-top: 20px;
+}
 
 @media (max-width: 768px) {
   .footer {
