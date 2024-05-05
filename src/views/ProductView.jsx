@@ -12,7 +12,7 @@ export const ProductView = () => {
             <img src='https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg'
                  width={'100%'} />
                 <Carousel.Caption>
-                <h3>First slide label</h3>
+                <h3>Product Name</h3>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -20,7 +20,7 @@ export const ProductView = () => {
             <img src='https://cdn.conmebol.com/wp-content/uploads/2018/01/roe_.jpg'
                  width={'100%'} />
                 <Carousel.Caption>
-                <h3>Second slide label</h3>
+                <h3>Product Name</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -28,7 +28,7 @@ export const ProductView = () => {
             <img src='https://i.ytimg.com/vi/_i0_AHFSQ6s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBAMI9Gbud7Ubj0MzyHo2fXzzqdRA'
                  width={'100%'} />
                 <Carousel.Caption>
-                <h3>Third slide label</h3>
+                <h3>Product Name</h3>
                 <p>
                     Praesent commodo cursus magna, vel scelerisque nisl consectetur.
                 </p>
