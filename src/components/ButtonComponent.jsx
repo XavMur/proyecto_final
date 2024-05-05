@@ -2,9 +2,14 @@ import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 
-const ButtonComponent = ({ buttonBody, path = "" }) => {
+const ButtonComponent = ({
+  buttonBody,
+  path = "",
+  width = "auto",
+  height = "auto",
+  variant = "outline-info",
+}) => {
   const [buttonValue, setButtonValue] = useState("");
-  const [changePath, setChangePath] = useState(false);
   const navigate = useNavigate();
   const changeRoute = (path) => {
     navigate(path);
@@ -14,16 +19,11 @@ const ButtonComponent = ({ buttonBody, path = "" }) => {
     setButtonValue(buttonBody);
   }, [buttonBody]);
 
-  useEffect(() => {
-    changeRoute(path);
-    setChangePath(false);
-  }, [changePath]);
-
   return (
     <Button
-      style={{ marginRight: "10px" }}
-      variant="outline-info"
-      onClick={() => setChangePath(true)}
+      style={{ marginRight: "10px", width: { width }, height: { height } }}
+      variant={variant}
+      onClick={() => changeRoute(path)}
     >
       {buttonValue}
     </Button>
