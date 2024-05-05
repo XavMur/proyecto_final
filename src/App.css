@@ -52,6 +52,7 @@
 .product-carousel{
   grid-area: pcarousel; 
   background-color: black;
+  height: 100%;
 }
 .product-description{
   grid-area: pdescription;
