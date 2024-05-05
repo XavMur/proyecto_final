@@ -1,10 +1,10 @@
 import React from "react";
 
-const MainViewItemComponent = () => {
+const MainViewItemComponent = ({ image, title, price }) => {
   return (
     <div className="col-12 col-md-4 col-lg-3  main-item">
       <img
-        src="https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
+        src={image}
         style={{
           marginLeft: "30px",
           marginTop: "10px",
@@ -13,8 +13,8 @@ const MainViewItemComponent = () => {
           borderRadius: "15px",
         }}
       />
-      <strong>Titulo del producto</strong>
-      <p>Precio: 100000$</p>
+      <strong>{title}</strong>
+      <p>{price}$</p>
     </div>
   );
 };
