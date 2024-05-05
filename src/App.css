@@ -8,7 +8,9 @@
   width: 100%;
   padding: 1%;
 }
-
+.carousel {
+  border-radius: 1rem;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -36,31 +38,57 @@
 .product-view {
   display: grid;
   grid-template-areas:
-    "pname pname"
     "pcarousel pdescription"
     "pcarousel pdescription";
-  grid-template-columns: 5fr 5fr;
-  grid-template-rows: 2fr 5fr 5fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   height: 100vh;
   width: 100%;
 }
 
-.product-name {
-  grid-area: pname;
-  background-color: #a1d4f2;
-}
 .product-carousel {
   grid-area: pcarousel;
-  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: start;
   height: 100%;
+  border: 1px solid black;
+  padding-top: 1rem;
 }
 .product-description {
   grid-area: pdescription;
-  background-color: #6d3a3a;
   overflow: auto;
 }
-
-
+.product-title {
+  padding-top: 0.5rem;  
+  text-align: center;
+}
+.quantity {
+  display: flex;
+  margin-left: 1rem;
+  justify-content: center;
+  border: 1px solid black;
+  height: 5%;
+  width: 5%;
+}
+.seller-desc {
+  display: flex;
+  flex-direction: column;
+}
+.seller-tag{
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1rem;
+}
+.main-carousel {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 1rem;
+}
 .main {
   min-height: 80vh;
   background-color: #a1d4f2;

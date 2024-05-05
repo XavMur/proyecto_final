@@ -18,8 +18,8 @@ const MainView = () => {
   return (
     <div>
       <div className="main">
-        <div className="row" style={{height:"20%"}}>
-          <CarouselComponent items={items} height={'200px'} />
+        <div className="row main-carousel">
+          <CarouselComponent items={items} height={'200px'} width={"90%"} />
         </div>
         <div className="row" style={{ maxWidth: "99%" }}>
           <MainViewItemComponent />

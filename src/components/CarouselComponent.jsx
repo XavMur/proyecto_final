@@ -1,13 +1,16 @@
 import Carousel from 'react-bootstrap/Carousel';
 
-export const CarouselComponent = ({items,height}) => {
+export const CarouselComponent = ({items,height,width}) => {
   return (
-    <Carousel>
+    <Carousel style={{width:width}}>
         {
             items.map(item=>(
                 <Carousel.Item key={item.id}>
-                <img src={item.img}
-                    style={{ width: '100%', height: 'auto', maxHeight: height }} />
+                <img
+                    className='carousel' 
+                    src={item.img}
+                    style={{ width: '100%', height: 'auto', maxHeight: height }} 
+                />
                     <Carousel.Caption>
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
