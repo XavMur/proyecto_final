@@ -7,6 +7,9 @@ import MainView from "./views/mainView";
 import LoginProvider from "./context/LoginContext";
 import LoginModalView from "./views/LoginModalView";
 import { Route, Routes } from "react-router-dom";
+import CartView from "./views/CartView";
+import PublicationView from "./views/PublicationView";
+import ProfileView from "./views/ProfileView";
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
         <Routes>
           <Route path="/" element={<MainView />} />
           <Route path="/product" element={<ProductView />} />
+          <Route path="/cart" element={<CartView />} />
+          <Route path="/publication" element={<PublicationView />} />
+          <Route path="/profile" element={<ProfileView />} />
         </Routes>
         <Footer />
       </LoginProvider>

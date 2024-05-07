@@ -21,7 +21,12 @@ export const ProductView = () => {
     <>
         <div className="product-view">
             <div className="product-carousel">
-                <CarouselComponent items={items} height={'100vh'} width={"90%"} />
+                <CarouselComponent 
+                    items={items}
+                    height={'70vh'} 
+                    maxheight={'100vh'} 
+                    width={"90%"} 
+                />
             </div>
             <div className="product-description">
                 <h2 className="product-title">
