@@ -1,133 +1,87 @@
 import React from "react";
-import MainViewItemComponent from "../components/MainViewItemComponent";
-import CarouselComponent from "../components/CarouselComponent";
+import BannerComponent from "../components/CategoryBannerComponent";
 
-const MainView = () => {
-  let items = [
-    {
-      id: 1,
-      img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
-      title: "AAA",
-      description: "CCC",
-    },
-    {
-      id: 2,
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Ronaldinho_11feb2007.jpg/200px-Ronaldinho_11feb2007.jpg",
-      title: "BBB",
-      description: "XXX",
-    },
-  ];
+const mainView = () => {
   return (
     <div>
-      <div className="main">
-        <div className="row main-carousel">
-          <CarouselComponent items={items} height={'200px'} width={"90%"} />
+      <div className="row" style={{ maxWidth: "99vw" }}>
+        <div className="col-12 col-md-6 col-lg-6">
+          <BannerComponent
+            width={"100%"}
+            height={"90%"}
+            border={"50px"}
+            image={
+              "https://i.insider.com/642ca4ccd335200018ddab95?width=1136&format=jpeg"
+            }
+          />
         </div>
-        <div className="row" style={{ maxWidth: "99%", marginLeft: "5px" }}>
-          <MainViewItemComponent
+        <div className="col-12 col-md-6 col-lg-6">
+          <BannerComponent
+            width={"100%"}
+            height={"90%"}
+            border={"50px"}
             image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
+              "https://pyxis.nymag.com/v1/imgs/0bc/4b4/af7d0aa04cba2c31c7800b769a46cc133b-27-teen-sneakers-lede.2x.rsocial.w600.jpg"
             }
-            title={"Nombre del producto"}
-            price={1000}
           />
-          <MainViewItemComponent
+        </div>
+      </div>
+      <p
+        style={{ textAlign: "center", fontWeight: "bolder", fontSize: "20px" }}
+      >
+        Ofrecemos las mejores zapatillas en el mercado, de las marcas mas
+        prestigiosas en el mundo
+      </p>
+      <div
+        className="row d-flex justify-content-center logo-container"
+        style={{ marginBottom: "20px" }}
+      >
+        <div
+          className="col-12 col-md-6 col-lg-3 brand"
+          style={{ width: "10%" }}
+        >
+          <BannerComponent
+            width={"80%"}
+            height={"80%"}
             image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
+              "https://i.pinimg.com/originals/20/60/2d/20602d43cc993811e5a6bd1886af4f33.png"
             }
-            title={"Nombre del producto"}
-            price={1000}
           />
-          <MainViewItemComponent
+        </div>
+        <div
+          className="col-12 col-md-6 col-lg-3 brand"
+          style={{ width: "10%" }}
+        >
+          <BannerComponent
+            width={"80%"}
+            height={"80%"}
             image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
+              "https://upload.wikimedia.org/wikipedia/commons/e/eb/Converse_shoe_company_logo.png"
             }
-            title={"Nombre del producto"}
-            price={1000}
           />
-          <MainViewItemComponent
+        </div>
+        <div
+          className="col-12 col-md-6 col-lg-3 brand"
+          style={{ width: "10%" }}
+        >
+          <BannerComponent
+            width={"80%"}
+            height={"80%"}
             image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
+              "https://upload.wikimedia.org/wikipedia/commons/2/24/Adidas_logo.png"
             }
-            title={"Nombre del producto"}
-            price={1000}
           />
-          <MainViewItemComponent
+        </div>
+        <div
+          className="col-12 col-md-6 col-lg-3 brand"
+          style={{ width: "15%" }}
+        >
+          <BannerComponent
+            width={"100%"}
+            height={"100%"}
             image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
+              "https://upload.wikimedia.org/wikipedia/commons/d/dc/NorthStar_logo.svg"
             }
-            title={"Nombre del producto"}
-            price={1000}
-          />
-          <MainViewItemComponent
-            image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-            }
-            title={"Nombre del producto"}
-            price={1000}
-          />
-          <MainViewItemComponent
-            image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-            }
-            title={"Nombre del producto"}
-            price={1000}
-          />
-          <MainViewItemComponent
-            image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-            }
-            title={"Nombre del producto"}
-            price={1000}
-          />
-          <MainViewItemComponent
-            image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-            }
-            title={"Nombre del producto"}
-            price={1000}
-          />
-          <MainViewItemComponent
-            image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-            }
-            title={"Nombre del producto"}
-            price={1000}
-          />
-          <MainViewItemComponent
-            image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-            }
-            title={"Nombre del producto"}
-            price={1000}
-          />
-          <MainViewItemComponent
-            image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-            }
-            title={"Nombre del producto"}
-            price={1000}
-          />
-          <MainViewItemComponent
-            image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-            }
-            title={"Nombre del producto"}
-            price={1000}
-          />
-          <MainViewItemComponent
-            image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-            }
-            title={"Nombre del producto"}
-            price={1000}
-          />
-          <MainViewItemComponent
-            image={
-              "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-            }
-            title={"Nombre del producto"}
-            price={1000}
           />
         </div>
       </div>
@@ -135,4 +89,4 @@ const MainView = () => {
   );
 };
 
-export default MainView;
+export default mainView;
