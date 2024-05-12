@@ -1,9 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const BannerComponent = ({ width, height, image, border = 0 }) => {
+const BannerComponent = ({ width, height, image, border = 0, path }) => {
+  const navigate = useNavigate();
   return (
     <img
+      onClick={navigate(path)}
       src={image}
       style={{
         width: width,
