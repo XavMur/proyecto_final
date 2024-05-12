@@ -5,7 +5,7 @@ const BannerComponent = ({ width, height, image, border = 0, path }) => {
   const navigate = useNavigate();
   return (
     <img
-      onClick={navigate(path)}
+      onClick={(e)=>navigate(path)}
       src={image}
       style={{
         width: width,
