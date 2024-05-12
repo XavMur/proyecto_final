@@ -10,6 +10,7 @@ import { Route, Routes } from "react-router-dom";
 import CartView from "./views/CartView";
 import PublicationView from "./views/PublicationView";
 import ProfileView from "./views/ProfileView";
+import GridView from "./views/GridView";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/cart" element={<CartView />} />
           <Route path="/publication" element={<PublicationView />} />
           <Route path="/profile" element={<ProfileView />} />
+          <Route path="/products" element={<GridView />} />
         </Routes>
         <Footer />
       </LoginProvider>

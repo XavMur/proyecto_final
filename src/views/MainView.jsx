@@ -1,6 +1,7 @@
 import React from "react";
 import BannerComponent from "../components/CategoryBannerComponent";
 import SliderComponent from "../components/SliderComponent";
+import { useNavigate } from "react-router-dom";
 
 const mainView = () => {
   let items = [
@@ -35,11 +36,14 @@ const mainView = () => {
       price: "CCC",
     },
   ];
+
   return (
     <div>
       <div className="row" style={{ maxWidth: "99vw" }}>
         <div className="col-12 col-md-6 col-lg-6 main-banner">
+          <h1 style={{textAlign:"center"}}>Retro</h1>
           <BannerComponent
+            path={"/products"}
             width={"100%"}
             height={"90%"}
             border={"50px"}
@@ -49,6 +53,7 @@ const mainView = () => {
           />
         </div>
         <div className="col-12 col-md-6 col-lg-6 main-banner">
+          <h1 style={{textAlign:"center"}}>Mujeres</h1>
           <BannerComponent
             width={"100%"}
             height={"90%"}
