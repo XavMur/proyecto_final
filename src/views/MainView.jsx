@@ -8,31 +8,31 @@ const mainView = () => {
       id: 1,
       img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
       title: "AAA",
-      description: "CCC",
+      price: "CCC",
     },
     {
       id: 2,
       img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
       title: "AAA",
-      description: "CCC",
+      price: "CCC",
     },
     {
       id: 3,
       img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
       title: "AAA",
-      description: "CCC",
+      price: "CCC",
     },
     {
       id: 4,
       img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
       title: "AAA",
-      description: "CCC",
+      price: "CCC",
     },
     {
       id: 5,
       img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
       title: "AAA",
-      description: "CCC",
+      price: "CCC",
     },
   ];
   return (
