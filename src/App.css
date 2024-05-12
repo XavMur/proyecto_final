@@ -281,8 +281,12 @@
 }
 
 .trend-text {
-  margin-left: 50px;
+  display: block;
   font-size: 50px;
   font-weight: bolder;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid black; 
+}
+.trend-text:hover {
+  cursor: pointer;
+  border-bottom: 10px solid black;
 }
