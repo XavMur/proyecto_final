@@ -3,9 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 const BannerComponent = ({ width, height, image, border = 0, path }) => {
   const navigate = useNavigate();
+  const changePage = () => {
+    navigate(path);
+  };
+
   return (
     <img
-      onClick={navigate(path)}
+      onClick={() => changePage()}
       src={image}
       style={{
         width: width,
