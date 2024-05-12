@@ -9,7 +9,7 @@ const BannerComponent = ({ width, height, image, border = 0, path }) => {
 
   return (
     <img
-      onClick={() => changePage()}
+      onClick={() => navigate(path)}
       src={image}
       style={{
         width: width,
