@@ -136,12 +136,12 @@ const mainView = () => {
           Tendencia ahora
         </p>
         <div className="row ">
-          <div className="col-12 col-lg-3 trend-text">aa</div>
-          <div className="col-12 col-lg-3 trend-text">bbb</div>
-          <div className="col-12 col-lg-3 trend-text">ccc</div>
-          <div className="col-12 col-lg-3 trend-text">ddd</div>
-          <div className="col-12 col-lg-3 trend-text">ddd</div>
-          <div className="col-12 col-lg-3 trend-text">ddd</div>
+          <div className="col-12 col-lg-4"><span className="trend-text">aa</span></div>
+          <div className="col-12 col-lg-4 "><span className="trend-text">aa</span></div>
+          <div className="col-12 col-lg-4 "><span className="trend-text">aa</span></div>
+          <div className="col-12 col-lg-4 "><span className="trend-text">aa</span></div>
+          <div className="col-12 col-lg-4 "><span className="trend-text">aa</span></div>
+          <div className="col-12 col-lg-4 "><span className="trend-text">aa</span></div>
         </div>
       </div>
     </div>
