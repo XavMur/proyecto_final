@@ -52,6 +52,7 @@ export const ProductView = () => {
         <div>
             <h4 style={{marginLeft:"1%"}}>Productos Relacionados</h4>
             <div className="row" style={{ maxWidth: "99%"}}>
+            <div className="col-12 col-md-4 col-lg-3  main-item">
                 <MainViewItemComponent
                     image={
                     "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
@@ -59,6 +60,8 @@ export const ProductView = () => {
                     title={"Nombre del producto"}
                     price={1000}
                 />
+            </div>
+            <div className="col-12 col-md-4 col-lg-3  main-item">
                 <MainViewItemComponent
                     image={
                     "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
@@ -66,6 +69,8 @@ export const ProductView = () => {
                     title={"Nombre del producto"}
                     price={1000}
                 />
+            </div>
+            <div className="col-12 col-md-4 col-lg-3  main-item">
                 <MainViewItemComponent
                     image={
                     "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
@@ -73,6 +78,8 @@ export const ProductView = () => {
                     title={"Nombre del producto"}
                     price={1000}
                 />
+            </div>
+            <div className="col-12 col-md-4 col-lg-3  main-item">
                 <MainViewItemComponent
                     image={
                     "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
@@ -80,6 +87,7 @@ export const ProductView = () => {
                     title={"Nombre del producto"}
                     price={1000}
                 />
+            </div>
             </div>
         </div>
     </>
