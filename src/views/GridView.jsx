@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import MainViewItemComponent from "../components/MainViewItemComponent";
 import getProducts from "../utilities/getProducts";
+import getCategories from "../utilities/getCategories";
 
-export const GridView = ({categories}) => {
+export const GridView = () => {
     const [products, setProducts] = useState([]);
     const [isChecked, setIsChecked] = useState(false);
     const handleCheckboxChange = () => {
