@@ -211,6 +211,13 @@
     flex-direction: column;
     align-items: center;
   }
+  .carousel-item div {
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel-img {
+    margin-bottom: 1rem;
+  }
 }
 
 .custom-select {
@@ -223,4 +230,40 @@
 .brand:hover {
   background-color: #aba9a9;
   border-radius: 50px;
+  cursor: pointer;
+}
+
+
+
+.main-banner:hover {
+  transform: scale(0.2);
+}
+
+/* Animation to pulse the image */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(0.8);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.main-banner:hover {
+  animation: pulse 2s infinite;
+  cursor: pointer;
+}
+
+.carousel-img {
+  cursor: pointer;
+}
+.carousel-item div {
+  justify-content: space-around;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black;
 }

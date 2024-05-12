@@ -1,11 +1,46 @@
 import React from "react";
 import BannerComponent from "../components/CategoryBannerComponent";
+import SliderComponent from "../components/SliderComponent";
 
 const mainView = () => {
+  let items = [
+    {
+      id: 1,
+      img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
+      title: "AAA",
+      description: "CCC",
+    },
+    {
+      id: 2,
+      img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
+      title: "AAA",
+      description: "CCC",
+    },
+    {
+      id: 3,
+      img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
+      title: "AAA",
+      description: "CCC",
+    },
+    {
+      id: 4,
+      img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
+      title: "AAA",
+      description: "CCC",
+    },
+    {
+      id: 5,
+      img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
+      title: "AAA",
+      description: "CCC",
+    },
+    
+
+  ];
   return (
     <div>
       <div className="row" style={{ maxWidth: "99vw" }}>
-        <div className="col-12 col-md-6 col-lg-6">
+        <div className="col-12 col-md-6 col-lg-6 main-banner">
           <BannerComponent
             width={"100%"}
             height={"90%"}
@@ -15,7 +50,7 @@ const mainView = () => {
             }
           />
         </div>
-        <div className="col-12 col-md-6 col-lg-6">
+        <div className="col-12 col-md-6 col-lg-6 main-banner">
           <BannerComponent
             width={"100%"}
             height={"90%"}
@@ -34,7 +69,7 @@ const mainView = () => {
       </p>
       <div
         className="row d-flex justify-content-center logo-container"
-        style={{ marginBottom: "20px" }}
+        style={{ marginBottom: "20px", width:"100%" }}
       >
         <div
           className="col-12 col-md-6 col-lg-3 brand"
@@ -84,6 +119,12 @@ const mainView = () => {
             }
           />
         </div>
+        <br/>
+        <SliderComponent 
+          height = {"30vh"} 
+          maxheight = {"auto"} 
+          items = {items}
+        />
       </div>
     </div>
   );
