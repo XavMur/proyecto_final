@@ -34,8 +34,6 @@ const mainView = () => {
       title: "AAA",
       price: "CCC",
     },
-    
-
   ];
   return (
     <div>
@@ -69,7 +67,7 @@ const mainView = () => {
       </p>
       <div
         className="row d-flex justify-content-center logo-container"
-        style={{ marginBottom: "20px", width:"100%" }}
+        style={{ marginBottom: "20px", width: "100%" }}
       >
         <div
           className="col-12 col-md-6 col-lg-3 brand"
@@ -119,11 +117,32 @@ const mainView = () => {
             }
           />
         </div>
-        <br/>
-        <SliderComponent 
-          height = {"30vh"} 
-          items = {items}
+        <br />
+        <SliderComponent height={"30vh"} maxheight={"auto"} items={items} />
+      </div>
+      <div className="main-banner">
+        <BannerComponent
+          width={"97vw"}
+          height={"60vh"}
+          border={"50px"}
+          image={"src/img/banner_largo.png"}
         />
+      </div>
+      <div
+        className="categories"
+        style={{ width: "90%", marginBottom: "20px" }}
+      >
+        <p style={{ fontWeight: "bolder", fontSize: "35px" }}>
+          Tendencia ahora
+        </p>
+        <div className="row ">
+          <div className="col-12 col-lg-3 trend-text">aa</div>
+          <div className="col-12 col-lg-3 trend-text">bbb</div>
+          <div className="col-12 col-lg-3 trend-text">ccc</div>
+          <div className="col-12 col-lg-3 trend-text">ddd</div>
+          <div className="col-12 col-lg-3 trend-text">ddd</div>
+          <div className="col-12 col-lg-3 trend-text">ddd</div>
+        </div>
       </div>
     </div>
   );
