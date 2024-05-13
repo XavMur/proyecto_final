@@ -16,7 +16,7 @@ const UploadPhotoComponent = () => {
   return (
     <div>
       <input type="file" multiple onChange={handleFileInputChange} />
-      <button onClick={(e)=>handleUpload(e)}>Upload</button>
+      <button className='btn btn-primary' style={{marginLeft:"1rem"}} onClick={(e)=>handleUpload(e)}>Upload</button>
       <div>
         {selectedFiles.map((file, index) => (
           <div key={index}>
