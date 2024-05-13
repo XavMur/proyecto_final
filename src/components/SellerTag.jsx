@@ -1,11 +1,9 @@
 
-export const SellerTag = () => {
+export const SellerTag = ({descripcion}) => {
   return (
     <div className="seller-tag">
-        <img src="" alt="seller-photo" />
         <div className="seller-desc">
-            <p>Seller's name</p>
-            <p>Seller rating</p>
+            <p>{descripcion}</p>
         </div>
     </div>
   )

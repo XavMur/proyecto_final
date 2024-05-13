@@ -42,7 +42,7 @@ export const CardComponent = ({currency,price,condition,quantity,shipping,delive
                 <div className="payments">
                     {
                         payments.map(payment => (
-                            <img src={payment.img} key={payment.img} alt={payment.desc} />
+                            <img src={payment.img} key={payment.img} alt={payment.desc} style={{width:"20%",height:"50%"}}/>
                         ))
                     }
                 </div>
