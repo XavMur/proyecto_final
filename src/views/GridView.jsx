@@ -57,6 +57,7 @@ export const GridView = () => {
                   title={product.nombreproducto}
                   price={product.precio}
                   height="35vh"
+                  id={product.id}
                 />
               </div>
             ))
