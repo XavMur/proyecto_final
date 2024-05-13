@@ -224,7 +224,7 @@
   .carousel-img {
     margin-bottom: 1rem;
   }
-  .main-item-img{
+  .main-item-img {
     width: auto !important;
   }
 }
@@ -285,7 +285,7 @@
   display: block;
   font-size: 50px;
   font-weight: bolder;
-  border-bottom: 1px solid black; 
+  border-bottom: 1px solid black;
 }
 .trend-text:hover {
   cursor: pointer;
@@ -294,8 +294,7 @@
 
 .grid-view {
   display: grid;
-  grid-template-areas:
-    "sidebar grid-container";
+  grid-template-areas: "sidebar grid-container";
   grid-template-columns: 1fr 6fr;
   grid-template-rows: auto;
   min-height: 100vh;
@@ -318,4 +317,7 @@
 }
 .grid-container {
   grid-area: grid-container;
+}
+.long-banner:hover {
+  cursor: pointer;
 }
