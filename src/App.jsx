@@ -24,7 +24,7 @@ function App() {
           <Route path="/cart" element={<CartView />} />
           <Route path="/publication" element={<PublicationView />} />
           <Route path="/profile" element={<ProfileView />} />
-          <Route path="/products" element={<GridView />} />
+          <Route path="/products/:catId" element={<GridView />} />
         </Routes>
         <Footer />
       </LoginProvider>
