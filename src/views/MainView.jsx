@@ -3,6 +3,7 @@ import BannerComponent from "../components/CategoryBannerComponent";
 import SliderComponent from "../components/SliderComponent";
 import getTrends from "../utilities/getTrends";
 import { useNavigate } from "react-router-dom";
+import getProducts from "../utilities/getProducts";
 
 const mainView = () => {
   const navigate = useNavigate();
@@ -10,43 +11,18 @@ const mainView = () => {
     navigate(`/products/${id}`);
   };
   const [trends, setTrends] = useState([]);
+  const [items, setItems] = useState([]);
   useEffect(() => {
     getTrends().then((data) => {
       setTrends(data);
     });
   }, []);
-  let items = [
-    {
-      id: 1,
-      img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
-      title: "AAA",
-      price: "CCC",
-    },
-    {
-      id: 2,
-      img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
-      title: "AAA",
-      price: "CCC",
-    },
-    {
-      id: 3,
-      img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
-      title: "AAA",
-      price: "CCC",
-    },
-    {
-      id: 4,
-      img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
-      title: "AAA",
-      price: "CCC",
-    },
-    {
-      id: 5,
-      img: "https://profutbolista.com/wp-content/uploads/2023/07/1571165602_906420_1571166462_noticia_normal.jpg",
-      title: "AAA",
-      price: "CCC",
-    },
-  ];
+
+  useEffect(() => {
+    getProducts([0], "*").then((data) => {
+      setItems(data);
+    });
+  }, [trends]);
 
   return (
     <div>
@@ -146,7 +122,7 @@ const mainView = () => {
         <br />
         <SliderComponent height={"30vh"} maxheight={"auto"} items={items} />
       </div>
-      <div className="main-banner">
+      <div className="long-banner">
         <BannerComponent
           path={"/products/7"}
           width={"97vw"}
