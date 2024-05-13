@@ -8,21 +8,17 @@ export const CarouselComponent = ({
 }) => {
   return (
     <Carousel style={{width:width}}>
-        {
-            items.map(item=>(
-                <Carousel.Item key={item.id}>
-                <img
-                    className='carousel' 
-                    src={item.img}
-                    style={{ width: '100%', height: height, maxHeight: maxheight }} 
-                />
-                    <Carousel.Caption>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            ))
-        }
+        <Carousel.Item>
+            <img
+                className='carousel' 
+                src={items.imagenproducto}
+                style={{ width: '100%', height: height, maxHeight: maxheight }} 
+            />
+                <Carousel.Caption>
+                <h3>{items.nombreproducto}</h3>
+                <p>{items.descripcion}</p>
+                </Carousel.Caption>
+        </Carousel.Item>
     </Carousel>
   )
 }
