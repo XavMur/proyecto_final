@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BannerComponent from "../components/CategoryBannerComponent";
 import SliderComponent from "../components/SliderComponent";
+import getTrends from "../utilities/getTrends";
 import { useNavigate } from "react-router-dom";
 
 const mainView = () => {
+  const navigate = useNavigate();
+  const changeRoute = (id) => {
+    navigate(`/products/${id}`);
+  };
+  const [trends, setTrends] = useState([]);
+  useEffect(() => {
+    getTrends().then((data) => {
+      setTrends(data);
+    });
+  }, []);
   let items = [
     {
       id: 1,
@@ -43,7 +54,7 @@ const mainView = () => {
         <div className="col-12 col-md-6 col-lg-6 main-banner">
           <h1 style={{ textAlign: "center" }}>Retro</h1>
           <BannerComponent
-            path={"/products"}
+            path={"/products/4"}
             width={"100%"}
             height={"90%"}
             border={"50px"}
@@ -55,6 +66,7 @@ const mainView = () => {
         <div className="col-12 col-md-6 col-lg-6 main-banner">
           <h1 style={{ textAlign: "center" }}>Mujeres</h1>
           <BannerComponent
+            path={"/products/5"}
             width={"100%"}
             height={"90%"}
             border={"50px"}
@@ -65,7 +77,12 @@ const mainView = () => {
         </div>
       </div>
       <p
-        style={{ textAlign: "center", fontWeight: "bolder", fontSize: "20px" }}
+        style={{
+          textAlign: "center",
+          fontWeight: "bolder",
+          fontSize: "20px",
+          marginTop: "20px",
+        }}
       >
         Ofrecemos las mejores zapatillas en el mercado, de las marcas mas
         prestigiosas en el mundo
@@ -79,6 +96,7 @@ const mainView = () => {
           style={{ width: "10%" }}
         >
           <BannerComponent
+            path={"/products/0"}
             width={"80%"}
             height={"80%"}
             image={
@@ -91,6 +109,7 @@ const mainView = () => {
           style={{ width: "10%" }}
         >
           <BannerComponent
+            path={"/products/1"}
             width={"80%"}
             height={"80%"}
             image={
@@ -103,6 +122,7 @@ const mainView = () => {
           style={{ width: "10%" }}
         >
           <BannerComponent
+            path={"/products/2"}
             width={"80%"}
             height={"80%"}
             image={
@@ -115,6 +135,7 @@ const mainView = () => {
           style={{ width: "15%" }}
         >
           <BannerComponent
+            path={"/products/3"}
             width={"100%"}
             height={"100%"}
             image={
@@ -127,6 +148,7 @@ const mainView = () => {
       </div>
       <div className="main-banner">
         <BannerComponent
+          path={"/products/7"}
           width={"97vw"}
           height={"60vh"}
           border={"50px"}
@@ -141,24 +163,17 @@ const mainView = () => {
           Tendencia ahora
         </p>
         <div className="row ">
-          <div className="col-12 col-lg-4">
-            <span className="trend-text">aa</span>
-          </div>
-          <div className="col-12 col-lg-4 ">
-            <span className="trend-text">aa</span>
-          </div>
-          <div className="col-12 col-lg-4 ">
-            <span className="trend-text">aa</span>
-          </div>
-          <div className="col-12 col-lg-4 ">
-            <span className="trend-text">aa</span>
-          </div>
-          <div className="col-12 col-lg-4 ">
-            <span className="trend-text">aa</span>
-          </div>
-          <div className="col-12 col-lg-4 ">
-            <span className="trend-text">aa</span>
-          </div>
+          {trends.map((trend) => (
+            <div
+              className="col-12 col-lg-4"
+              key={trend.categoria}
+              onClick={() => {
+                changeRoute(trend.id - 1);
+              }}
+            >
+              <span className="trend-text">{trend.categoria}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
