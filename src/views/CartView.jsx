@@ -1,8 +1,22 @@
+import { useEffect, useState } from "react";
 import ButtonComponent from "../components/ButtonComponent";
 import MainViewItemComponent from "../components/MainViewItemComponent";
+import SliderComponent from "../components/SliderComponent";
+import getProducts from "../utilities/getProducts";
 
 export const CartView = () => {
     const numeroProductos = 2
+    const [items, setItems] = useState([]);
+    useEffect(() => {
+        getProducts([0], "*").then((data) => {
+          setItems(data);
+        });
+      }, []);
+
+    let cartItems = [{
+        "id":0
+    }]
+
   return (
     <div className="cart-view">
         <div className="cart-items">
@@ -12,33 +26,19 @@ export const CartView = () => {
             </div>
             <ul className="list-group list-group-flush">
                 <li className="list-group-item cart-item">
-                    <MainViewItemComponent
-                        image={
-                        "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-                        }
-                        title={"Nombre del producto"}
-                        price={1000}
-                    />
-                    <p>Description</p>
-                </li>
-                <li className="list-group-item cart-item">
-                    <MainViewItemComponent
-                            image={
-                            "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-                            }
-                            title={"Nombre del producto"}
-                            price={1000}
-                    />
-                    <p>Description</p>
-                </li>
-                <li className="list-group-item cart-item">
-                    <MainViewItemComponent
-                            image={
-                            "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-                            }
-                            title={"Nombre del producto"}
-                            price={1000}
-                    />
+                   {
+                    cartItems.map(item=>(
+                        <MainViewItemComponent
+                            key={item.id}
+                            image={item.imagenproducto}
+                            title={item.nombreproducto}
+                            pice={item.precio}
+                            id={item.id}
+                            width={"50%"}
+                            height={"100%"}
+                        />
+                    ))
+                   }
                     <p>Description</p>
                 </li>
             </ul>
@@ -56,28 +56,7 @@ export const CartView = () => {
         </div>
         <div className="cart-products">
             <h3>Otros Productos</h3>
-            <MainViewItemComponent
-                    image={
-                    "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-                    }
-                    title={"Nombre del producto"}
-                    price={1000}
-            />
-            <MainViewItemComponent
-                    image={
-                    "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-                    }
-                    title={"Nombre del producto"}
-                    price={1000}
-            />
-            <MainViewItemComponent
-                    image={
-                    "https://i.ebayimg.com/images/g/pHwAAOSw7Cdh5uD5/s-l1200.webp"
-                    }
-                    title={"Nombre del producto"}
-                    price={1000}
-            />
-            
+            <SliderComponent height={"30vh"} maxheight={"auto"} items={items} />
         </div>
 
     </div>
