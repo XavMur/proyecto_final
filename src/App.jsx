@@ -11,22 +11,25 @@ import CartView from "./views/CartView";
 import PublicationView from "./views/PublicationView";
 import ProfileView from "./views/ProfileView";
 import GridView from "./views/GridView";
+import CartProvider from "./context/CartContext";
 
 function App() {
   return (
     <>
       <LoginProvider>
-        <LoginModalView />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<MainView />} />
-          <Route path="/product/:id" element={<ProductView />} />
-          <Route path="/cart" element={<CartView />} />
-          <Route path="/publication" element={<PublicationView />} />
-          <Route path="/profile" element={<ProfileView />} />
-          <Route path="/products/:catId" element={<GridView />} />
-        </Routes>
-        <Footer />
+        <CartProvider>
+          <LoginModalView />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<MainView />} />
+            <Route path="/product/:id" element={<ProductView />} />
+            <Route path="/cart" element={<CartView />} />
+            <Route path="/publication" element={<PublicationView />} />
+            <Route path="/profile" element={<ProfileView />} />
+            <Route path="/products/:catId" element={<GridView />} />
+          </Routes>
+          <Footer />
+        </CartProvider>
       </LoginProvider>
     </>
   );

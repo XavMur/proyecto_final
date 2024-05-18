@@ -17,7 +17,7 @@ const SliderComponent = ({ height, maxheight, items }) => {
                 key={item.id}
                 image={item.imagenproducto}
                 title={item.nombreproducto}
-                pice={item.precio}
+                price={item.precio}
                 width={"22vw"}
                 height={"30vh"}
                 id={item.id}
