@@ -30,12 +30,16 @@
 .cart-items {
   grid-area: cartItems;
 }
+.cart-item {
+  border-bottom: 1px solid black;
+}
 .cart-details {
   grid-area: cartDetails;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: lightcyan;
 }
 .cart-products {
   grid-area: cartProducts;
@@ -44,6 +48,7 @@
   align-items: center;
   justify-content: center;
   overflow: auto;
+  background-color: lightblue;
 }
 .cart-item {
   display: flex;
