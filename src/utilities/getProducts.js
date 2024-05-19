@@ -1,7 +1,7 @@
 const getProducts = async (selCategories = [0], categories) => {
     let query;
     const baseUrl = "http://localhost:3000/productos?";
-    if(categories == "*"){
+    if(categories == "*" || selCategories.length <= 0){
         query = baseUrl + "categoria=*"
     }
     else{
