@@ -310,10 +310,9 @@
   flex-direction: column;
 }
 
-.sidebar p:hover {
-  cursor: pointer;
-  background-color: black;
-  color: white;
+.categories-title {
+  font-size: 2vw;
+  font-weight: bold;
 }
 .grid-container {
   grid-area: grid-container;

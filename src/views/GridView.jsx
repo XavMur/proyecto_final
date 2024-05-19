@@ -61,7 +61,7 @@ export const GridView = () => {
   return (
     <div className="grid-view">
       <div className="sidebar">
-        <h3>Categorias</h3>
+        <p className="categories-title">Categorias</p>
         {categories ? (
           categories.map((categ, index) => (
             <div key={categ.id} className="form-check">
