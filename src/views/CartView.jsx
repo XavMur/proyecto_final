@@ -13,6 +13,7 @@ export const CartView = () => {
       setItems(data);
     });
   }, []);
+  console.log("cartProducts", cartProducts);
 
   const getAmount = (id) => {
     const amount = cartProducts.filter((item) => item.id == id).length;
