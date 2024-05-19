@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import { useGoogleLogin } from "@react-oauth/google";
 import Form from "react-bootstrap/Form";
 import ButtonComponent from "../components/ButtonComponent";
+import handleUser from "../utilities/handleUser";
 
 const LoginModalView = () => {
   const { login, setLogin, user, setUser } = useContext(LoginContext);
@@ -71,11 +72,14 @@ const LoginModalView = () => {
   });
 
   useEffect(() => {
-    console.log(userToken);
     fetchUserProfile(userToken);
-    console.log(user);
   }, [userToken]);
 
+  useEffect(() => {
+    if (user != 0) {
+      handleUser(user);
+    }
+  }, [user]);
   useEffect(() => {}, [register, registered]);
 
   const renderLogin = () => {
