@@ -1,16 +1,27 @@
 import React, { useContext, useEffect, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { LoginContext } from "../context/LoginContext";
+import Cookies from "js-cookie";
+import { useGoogleLogin } from "@react-oauth/google";
 import Form from "react-bootstrap/Form";
 import ButtonComponent from "../components/ButtonComponent";
 
 const LoginModalView = () => {
-  const { login, setLogin } = useContext(LoginContext);
+  const { login, setLogin, user, setUser } = useContext(LoginContext);
+  const [userToken, setUserToken] = useState("");
   const [register, setRegister] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [registered, setRegistered] = useState(false);
   const [disabled, setDisabled] = useState(false);
+
+  useEffect(() => {
+    const token = Cookies.get("auth_token");
+    if (token) {
+      setUserToken(token);
+    }
+  }, []);
+
   const handleClose = () => {
     setLogin(false);
     setRegister(false);
@@ -28,6 +39,42 @@ const LoginModalView = () => {
     setDisabled(true);
     setRegistered(true);
   };
+
+  const fetchUserProfile = async (token) => {
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${token}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: "application/json",
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error(`Failed to fetch user profile: ${response.statusText}`);
+      }
+      const data = await response.json();
+      setUser(data);
+    } catch (error) {
+      console.log("Error fetching user profile:", error);
+    }
+  };
+
+  const handleLogin = useGoogleLogin({
+    onSuccess: (response) => {
+      setUserToken(response.access_token);
+      Cookies.set("auth_token", response.access_token, { expires: 1 });
+      handleClose();
+    },
+    onError: (error) => console.log("Login Failed:", error),
+  });
+
+  useEffect(() => {
+    console.log(userToken);
+    fetchUserProfile(userToken);
+    console.log(user);
+  }, [userToken]);
 
   useEffect(() => {}, [register, registered]);
 
@@ -58,7 +105,23 @@ const LoginModalView = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer style={{ justifyContent: "center" }}>
-          <p>Inicio de sesion rapido</p>
+          <p>O</p>
+          <div className="d-flex justify-content-center">
+            <ButtonComponent
+              buttonBody={
+                <>
+                  Ingrese con Google
+                  <img
+                    src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
+                    width={"15%"}
+                  />
+                </>
+              }
+              variant="light"
+              width="50%"
+              onClick={() => handleLogin()}
+            />
+          </div>
         </Modal.Footer>
       </Modal>
     );

@@ -7,14 +7,33 @@ import { useParams } from "react-router-dom";
 export const GridView = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState([]);
   const { catId } = useParams();
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
+  const handleCheckboxChange = (index) => {
+    setIsChecked((prevState) => {
+      let updatedArray = [...prevState];
+      updatedArray[index] = !updatedArray[index];
+      return updatedArray;
+    });
+    console.log(isChecked);
   };
+
+  const generateCatCheck = (categories) => {
+    let catMap = [];
+    categories.map((category) => {
+      if (category.id == Number(catId) + 1) {
+        catMap.push(true);
+      } else {
+        catMap.push(false);
+      }
+    });
+    setIsChecked(catMap);
+  };
+
   useEffect(() => {
     getCategories().then((data) => {
       setCategories(data);
+      generateCatCheck(data);
     });
   }, []);
 
@@ -25,20 +44,20 @@ export const GridView = () => {
       });
     }
   }, [categories]);
-
   return (
     <div className="grid-view">
       <div className="sidebar">
         <h3>Categorias</h3>
         {categories ? (
-          categories.map((categ) => (
+          categories.map((categ, index) => (
             <div key={categ.id} className="form-check">
               <input
                 className="form-check-input"
                 type="checkbox"
-                value={isChecked}
+                checked={isChecked[index]}
+                value={isChecked[index]}
                 id="flexCheckDefault"
-                onChange={handleCheckboxChange}
+                onChange={() => handleCheckboxChange(index)}
               />
               <label className="form-check-label">{categ.categoria}</label>
             </div>

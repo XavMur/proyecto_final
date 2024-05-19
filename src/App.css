@@ -153,12 +153,7 @@
   margin-bottom: 1rem;
 }
 .quantity {
-  display: flex;
   margin-left: 1rem;
-  justify-content: center;
-  border: 1px solid black;
-  height: 5%;
-  width: 5%;
 }
 .seller-desc {
   display: flex;
@@ -313,7 +308,6 @@
   background-color: lightgray;
   display: flex;
   flex-direction: column;
-  
 }
 
 .sidebar p:hover {
@@ -326,4 +320,8 @@
 }
 .long-banner:hover {
   cursor: pointer;
+}
+
+.modal-footer {
+  flex-direction: column;
 }
