@@ -8,17 +8,10 @@ const ButtonComponent = ({
   height = "auto",
   variant = "outline-info",
   disabled = false,
+  style = { marginRight: "10px", width: width, height: height },
   onClick = () => {},
 }) => {
   const [buttonValue, setButtonValue] = useState("");
-
-  const handleClick = () => {
-    if (buttonBody == "log in") {
-      handleLogin();
-    } else {
-      changeRoute(path);
-    }
-  };
 
   useEffect(() => {
     setButtonValue(buttonBody);
@@ -26,7 +19,7 @@ const ButtonComponent = ({
 
   return (
     <Button
-      style={{ marginRight: "10px", width: width, height: height }}
+      style={style}
       variant={variant}
       onClick={() => onClick()}
       disabled={disabled}

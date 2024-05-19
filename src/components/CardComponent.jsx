@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import ButtonComponent from "./ButtonComponent";
 import { CartContext } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export const CardComponent = ({
   product,
@@ -13,10 +14,24 @@ export const CardComponent = ({
   returns,
   payments,
 }) => {
+  const [amount, setAmount] = useState(0);
   const { cartProducts, setCartProducts } = useContext(CartContext);
+  const navigate = useNavigate();
   const addProductToCart = () => {
-    setCartProducts([...cartProducts, product]);
+    let i = 0;
+    let currentProducts = [...cartProducts];
+    while (i < amount) {
+      currentProducts.push(product);
+      i += 1;
+    }
+    setCartProducts(currentProducts);
+    navigate("/cart");
   };
+  const handleSelect = (e) => {
+    e.preventDefault();
+    setAmount(e.target.value);
+  };
+  const options = Array.from({ length: quantity }, (_, index) => index + 1);
   return (
     <div className="card" style={{ width: "95%" }}>
       <div className="card-body">
@@ -25,7 +40,14 @@ export const CardComponent = ({
         </h5>
         <p className="card-text">Condicion: {condition} </p>
         <p className="card-text" style={{ display: "flex" }}>
-          Quantity: <span className="quantity">{quantity}</span>{" "}
+          Cantidad:{" "}
+          <span className="quantity">
+            <select value={amount} onChange={(e) => handleSelect(e)}>
+              {options.map((q, index) => (
+                <option key={index}>{q}</option>
+              ))}
+            </select>
+          </span>{" "}
         </p>
         <div
           style={{
