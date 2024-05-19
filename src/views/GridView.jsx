@@ -5,17 +5,31 @@ import getCategories from "../utilities/getCategories";
 import { useParams } from "react-router-dom";
 
 export const GridView = () => {
+  const { catId } = useParams();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [isChecked, setIsChecked] = useState([]);
-  const { catId } = useParams();
+  const [newFilter, setNewFilter] = useState([catId]);
   const handleCheckboxChange = (index) => {
     setIsChecked((prevState) => {
       let updatedArray = [...prevState];
       updatedArray[index] = !updatedArray[index];
+      //New filters inside the isChecked
+      setNewFilter((prevFilters) => {
+        let updatedFilters = [...prevFilters];
+        if (updatedArray[index]) {
+          if (!updatedFilters.includes(index.toString())) {
+            updatedFilters.push(index.toString());
+          }
+        } else {
+          updatedFilters = updatedFilters.filter(
+            (value) => value !== index.toString()
+          );
+        }
+        return updatedFilters;
+      });
       return updatedArray;
     });
-    console.log(isChecked);
   };
 
   const generateCatCheck = (categories) => {
@@ -39,11 +53,11 @@ export const GridView = () => {
 
   useEffect(() => {
     if (categories.length > 0) {
-      getProducts([catId], categories).then((data) => {
+      getProducts(newFilter, categories).then((data) => {
         setProducts(data);
       });
     }
-  }, [categories]);
+  }, [categories, newFilter]);
   return (
     <div className="grid-view">
       <div className="sidebar">
