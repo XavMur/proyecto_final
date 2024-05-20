@@ -25,8 +25,14 @@ export const Navbar = () => {
   return (
     <div className="nav-bar">
       <div className="d-flex ml-2">
-        <ButtonComponent buttonBody={"HOME"} onClick={() => navigate("/")} />
-        <img src="src/img/logo.png" alt="logo" width={"15%"} />
+        <img
+          src="\src\img\logo.png"
+          alt="logo"
+          width={"10%"}
+          className="navbar-img"
+          onClick={() => navigate("/")}
+        />
+        <img src="\src\img\logo2.png" alt="logo" width={"25%"} />
       </div>
       {/* <SearchBar widthValue={40} /> */}
       <div className="button-nav">
