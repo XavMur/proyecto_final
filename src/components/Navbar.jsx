@@ -24,19 +24,12 @@ export const Navbar = () => {
   };
   return (
     <div className="nav-bar">
-      <div className="d-flex">
-        <img
-          className="navbar-img"
-          src="src/img/logo.png"
-          alt="logo"
-          width={"10%"}
-          onClick={() => navigate("/")}
-          style={{ marginLeft: "3%" }}
-        />
-        <img src="src/img/logo2.png" alt="logo2" width={"20%"} />
+      <div className="d-flex ml-2">
+        <ButtonComponent buttonBody={"HOME"} onClick={() => navigate("/")} />
+        <img src="src/img/logo.png" alt="logo" width={"15%"} />
       </div>
       {/* <SearchBar widthValue={40} /> */}
-      <div className="button-nav d-flex align-items-center">
+      <div className="button-nav">
         {user != 0 ? (
           <div className="d-flex justify-content-evenly">
             {user.picture ? (
@@ -71,22 +64,22 @@ export const Navbar = () => {
             )}
             <ButtonComponent
               buttonBody="log out"
+              height="80%"
               variant="danger"
               onClick={handleLogOut}
-              height={"50%"}
             />
           </div>
         ) : (
           <ButtonComponent
-            height={"50%"}
             buttonBody="log in"
+            height="80%"
             onClick={handleLogin}
           />
         )}
         <ButtonComponent
-          height={"50%"}
           buttonBody={<FaCartPlus />}
           onClick={() => navigate("/cart")}
+          height="80%"
         />
       </div>
     </div>
