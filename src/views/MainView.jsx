@@ -128,7 +128,7 @@ const MainView = () => {
           width={"97vw"}
           height={"60vh"}
           border={"50px"}
-          image={"https://i.ibb.co/VNQ4wSv/banner-largo.png"}
+          image={"https://i.postimg.cc/xjbzgTZG/banner-largo.png"}
         />
       </div>
       <div
