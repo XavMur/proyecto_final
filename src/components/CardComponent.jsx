@@ -32,8 +32,8 @@ export const CardComponent = ({
     setCartProducts(currentProducts);
     const userData = await getUserData(user.email);
     const userId = userData[0].id;
-    console.log(userId);
     handleCartItems(currentProducts, userId);
+    setCartProducts([]);
     navigate("/cart");
   };
   const handleSelect = (e) => {

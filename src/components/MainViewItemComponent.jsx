@@ -10,16 +10,11 @@ const MainViewItemComponent = ({
   id = 0,
 }) => {
   const [currentId, setCurrentId] = useState(id);
-  useEffect(() => {
-    if (currentId !== id) {
-      setCurrentId(id);
-    }
-  }, [id]);
+  useEffect(() => {}, [currentId]);
   const navigate = useNavigate();
   const changeRoute = () => {
     navigate(`/product/${id}`);
     setCurrentId(id);
-    window.location.reload();
   };
   return (
     <div className="main-item-container">

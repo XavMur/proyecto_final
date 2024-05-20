@@ -27,7 +27,6 @@ export const ProfileView = () => {
   useEffect(() => {
     getData(user.email);
   }, []);
-  console.log(userData);
   const [formData, setFormData] = useState({
     usuario: userData.usuario,
     email: userData.email,
