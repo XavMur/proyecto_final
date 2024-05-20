@@ -50,7 +50,8 @@ export const ProfileView = () => {
     const jsonData = JSON.stringify(formData);
 
     try {
-      const baseUrl = "https://proyecto-final-be.onrender.com/profileUpdate";
+      const baseUrl =
+        "https://proyecto-final-be-5vjy.onrender.com/profileUpdate";
       const response = await fetch(baseUrl, {
         method: "POST",
         headers: {

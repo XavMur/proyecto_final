@@ -1,6 +1,6 @@
 const getProducts = async (selCategories = [0], categories) => {
     let query;
-    const baseUrl = "https://proyecto-final-be.onrender.com/productos?";
+    const baseUrl = "https://proyecto-final-be-5vjy.onrender.com/productos?";
     if(categories == "*" || selCategories.length <= 0){
         query = baseUrl + "categoria=*"
     }

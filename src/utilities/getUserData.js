@@ -2,7 +2,7 @@ const getUserData = async(email) =>{
     const emailData = {
         email:email
     }
-    const baseUrl = "https://proyecto-final-be.onrender.com/getUserData";
+    const baseUrl = "https://proyecto-final-be-5vjy.onrender.com/getUserData";
     const res = await fetch(baseUrl,{
         method:'POST',
         headers:{
