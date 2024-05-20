@@ -3,7 +3,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ProductView from "./views/ProductView";
-import MainView from "./views/mainView";
+import mainView from "./views/MainView";
 import LoginProvider from "./context/LoginContext";
 import LoginModalView from "./views/LoginModalView";
 import { Route, Routes } from "react-router-dom";
@@ -21,7 +21,7 @@ function App() {
           <LoginModalView />
           <Navbar />
           <Routes>
-            <Route path="/" element={<MainView />} />
+            <Route path="/" element={<mainView />} />
             <Route path="/product/:id" element={<ProductView />} />
             <Route path="/cart" element={<CartView />} />
             <Route path="/publication" element={<PublicationView />} />
