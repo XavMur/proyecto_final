@@ -13,7 +13,7 @@ const handleUser = async(userInfo) =>{
                 email: userInfo.email
             }
         }
-    const url = "http://localhost:3000/usuarios";
+    const url = "https://proyecto-final-be.onrender.com/usuarios";
     const res = await fetch(url,{
         method:'POST',
         headers:{

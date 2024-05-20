@@ -3,7 +3,7 @@ const userLoginWithoutGoogle = async(email, password) =>{
         email: email,
         password: password
     }
-    const url = "http://localhost:3000/usuarioLogin2";
+    const url = "https://proyecto-final-be.onrender.com/usuarioLogin2";
     const res = await fetch(url,{
         method:'POST',
         headers:{

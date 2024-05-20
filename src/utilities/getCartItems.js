@@ -2,7 +2,7 @@ const getCartItems = async(userId) =>{
     const id = {
         idusuario: userId
     }
-    const url = "http://localhost:3000/getCartItems";
+    const url = "https://proyecto-final-be.onrender.com/getCartItems";
     const res = await fetch(url,{
         method:'POST',
         headers:{
