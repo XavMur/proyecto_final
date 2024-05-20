@@ -5,7 +5,7 @@ import getTrends from "../utilities/getTrends";
 import { useNavigate } from "react-router-dom";
 import getProducts from "../utilities/getProducts";
 
-const mainView = () => {
+const MainView = () => {
   const navigate = useNavigate();
   const changeRoute = (id) => {
     navigate(`/products/${id}`);
@@ -156,4 +156,4 @@ const mainView = () => {
   );
 };
 
-export default mainView;
+export default MainView;
