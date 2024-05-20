@@ -56,8 +56,6 @@ export const CartView = () => {
     setFilteredProd(fprod);
   };
 
-  console.log("cartProducts", cartProducts);
-
   const getAmount = (id) => {
     const amount = cartProducts.filter((item) => item.id == id).length;
     return amount;
@@ -69,10 +67,10 @@ export const CartView = () => {
 
   const getSubtotal = () => {
     let aux = 0;
-    for (let p of filteredProd) {
-      setNumeroProductos(p.cantidad + aux);
-      aux = numeroProductos;
-    }
+    filteredProd.map((item) => {
+      aux = aux + item.cantidad;
+    });
+    setNumeroProductos(aux);
   };
 
   return (

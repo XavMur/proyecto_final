@@ -21,7 +21,7 @@ export const ProductView = () => {
     getProduct(id).then((data) => {
       setProducto(data[0]);
     });
-  }, []);
+  }, [id]);
   return (
     <>
       {id != 0 ? (

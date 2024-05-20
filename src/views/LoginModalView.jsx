@@ -12,8 +12,10 @@ const LoginModalView = () => {
   const { login, setLogin, user, setUser } = useContext(LoginContext);
   const [userToken, setUserToken] = useState("");
   const [register, setRegister] = useState(false);
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loginType, setLoginType] = useState("");
   const [registered, setRegistered] = useState(false);
   const [disabled, setDisabled] = useState(false);
 
@@ -40,6 +42,7 @@ const LoginModalView = () => {
     } else {
       setUser(userExistance.verificacion[0]);
       Cookies.set("auth_token", userExistance.token, { expires: 1 });
+      setLoginType("correo");
       handleClose();
     }
   };
@@ -47,6 +50,13 @@ const LoginModalView = () => {
   const handleRegister = () => {
     setDisabled(true);
     setRegistered(true);
+    const userInfo = {
+      name: username,
+      email: email,
+      password: password,
+    };
+    handleUser(userInfo);
+    handleClose();
   };
 
   const fetchUserProfile = async (token) => {
@@ -74,13 +84,16 @@ const LoginModalView = () => {
     onSuccess: (response) => {
       setUserToken(response.access_token);
       Cookies.set("auth_token", response.access_token, { expires: 1 });
+      setLoginType("google");
       handleClose();
     },
     onError: (error) => console.log("Login Failed:", error),
   });
 
   useEffect(() => {
-    fetchUserProfile(userToken);
+    if (loginType == "google") {
+      fetchUserProfile(userToken);
+    }
   }, [userToken]);
 
   useEffect(() => {
@@ -154,6 +167,14 @@ const LoginModalView = () => {
         <Modal.Body>
           <Form>
             <Form.Group>
+              <Form.Label> Usuario </Form.Label>
+              <Form.Control
+                disabled={disabled}
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                  setRegistered(false);
+                }}
+              ></Form.Control>
               <Form.Label> Email </Form.Label>
               <Form.Control
                 disabled={disabled}
