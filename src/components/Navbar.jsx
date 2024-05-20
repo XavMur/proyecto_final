@@ -26,13 +26,17 @@ export const Navbar = () => {
     <div className="nav-bar">
       <div className="d-flex ml-2">
         <img
-          src="\src\img\logo.png"
+          src="https://i.ibb.co/thq2nbk/logo.png"
           alt="logo"
           width={"10%"}
           className="navbar-img"
           onClick={() => navigate("/")}
         />
-        <img src="\src\img\logo2.png" alt="logo" width={"25%"} />
+        <img
+          src="https://i.ibb.co/TmGF3J2/logo2.png"
+          alt="logo"
+          width={"25%"}
+        />
       </div>
       {/* <SearchBar widthValue={40} /> */}
       <div className="button-nav">
