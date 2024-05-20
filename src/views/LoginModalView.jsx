@@ -6,6 +6,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import Form from "react-bootstrap/Form";
 import ButtonComponent from "../components/ButtonComponent";
 import handleUser from "../utilities/handleUser";
+import userLoginWithoutGoogle from "../utilities/userLoginwithoutGoogle";
 
 const LoginModalView = () => {
   const { login, setLogin, user, setUser } = useContext(LoginContext);
@@ -28,11 +29,18 @@ const LoginModalView = () => {
     setRegister(false);
     setRegistered(false);
   };
-  const handleAccess = () => {
-    if (email == "registered@gmail.com") {
+  const handleAccess = async () => {
+    const userExistance = await userLoginWithoutGoogle(email, password);
+    if (userExistance.verificacion == "No existe") {
       setRegister(true);
       setDisabled(false);
       setRegistered(false);
+    } else if (userExistance.verificacion == "Correo no valido") {
+      alert("Usuario o password incorrectos");
+    } else {
+      setUser(userExistance.verificacion[0]);
+      Cookies.set("auth_token", userExistance.token, { expires: 1 });
+      handleClose();
     }
   };
 
@@ -95,6 +103,12 @@ const LoginModalView = () => {
                 type="email"
                 placeholder="email@email.com"
                 onChange={(e) => setEmail(e.target.value)}
+              ></Form.Control>
+              <Form.Control
+                type="password"
+                placeholder="password"
+                onChange={(e) => setPassword(e.target.value)}
+                style={{ marginTop: "10px" }}
               ></Form.Control>
             </Form.Group>
             <div className="modal-button">

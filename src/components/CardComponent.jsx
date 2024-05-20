@@ -2,6 +2,9 @@ import { useContext, useState } from "react";
 import ButtonComponent from "./ButtonComponent";
 import { CartContext } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
+import handleCartItems from "../utilities/handleCartItems";
+import { LoginContext } from "../context/LoginContext";
+import getUserData from "../utilities/getUserData";
 
 export const CardComponent = ({
   product,
@@ -16,8 +19,10 @@ export const CardComponent = ({
 }) => {
   const [amount, setAmount] = useState(0);
   const { cartProducts, setCartProducts } = useContext(CartContext);
+  const { user } = useContext(LoginContext);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
   const navigate = useNavigate();
-  const addProductToCart = () => {
+  const addProductToCart = async () => {
     let i = 0;
     let currentProducts = [...cartProducts];
     while (i < amount) {
@@ -25,11 +30,20 @@ export const CardComponent = ({
       i += 1;
     }
     setCartProducts(currentProducts);
+    const userData = await getUserData(user.email);
+    const userId = userData[0].id;
+    console.log(userId);
+    handleCartItems(currentProducts, userId);
     navigate("/cart");
   };
   const handleSelect = (e) => {
     e.preventDefault();
-    setAmount(e.target.value);
+    setButtonDisabled(false);
+    if (e.target.value) {
+      setAmount(e.target.value);
+    } else {
+      setAmount(1);
+    }
   };
   const options = Array.from({ length: quantity }, (_, index) => index + 1);
   return (
@@ -43,6 +57,9 @@ export const CardComponent = ({
           Cantidad:{" "}
           <span className="quantity">
             <select value={amount} onChange={(e) => handleSelect(e)}>
+              <option value={0} disabled>
+                Seleccione la cantidad
+              </option>
               {options.map((q, index) => (
                 <option key={index}>{q}</option>
               ))}
@@ -62,6 +79,7 @@ export const CardComponent = ({
             width={"auto"}
             height={"auto"}
             variant={"primary"}
+            disabled={buttonDisabled}
           />
           <br />
           <ButtonComponent
@@ -70,6 +88,7 @@ export const CardComponent = ({
             width={"auto"}
             height={"auto"}
             variant={"primary"}
+            disabled={buttonDisabled}
             onClick={() => addProductToCart()}
           />
         </div>
