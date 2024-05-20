@@ -3,13 +3,13 @@ const handleUser = async(userInfo) =>{
     if(userInfo.password)
         {
             user = {
-                usuario: userInfo.name,
+                usuario: userInfo.name || userInfo.nombre,
                 email: userInfo.email,
-                password: userInfo.password
+                password: userInfo.password || userInfo.pass
             }
         } else{
             user = {
-                usuario: userInfo.name,
+                usuario: userInfo.name || userInfo.nombre,
                 email: userInfo.email
             }
         }

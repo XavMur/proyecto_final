@@ -39,7 +39,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: lightcyan;
 }
 .cart-products {
   grid-area: cartProducts;
@@ -48,7 +47,6 @@
   align-items: center;
   justify-content: center;
   overflow: auto;
-  background-color: lightblue;
 }
 .cart-item {
   display: flex;
@@ -78,6 +76,10 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.navbar-img:hover {
+  cursor: pointer;
 }
 
 .button-nav {
@@ -323,4 +325,15 @@
 
 .modal-footer {
   flex-direction: column;
+}
+.fallback {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 24px;
 }

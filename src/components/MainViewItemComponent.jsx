@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const MainViewItemComponent = ({
@@ -9,9 +9,17 @@ const MainViewItemComponent = ({
   width = "auto",
   id = 0,
 }) => {
+  const [currentId, setCurrentId] = useState(id);
+  useEffect(() => {
+    if (currentId !== id) {
+      setCurrentId(id);
+    }
+  }, [id]);
   const navigate = useNavigate();
   const changeRoute = () => {
     navigate(`/product/${id}`);
+    setCurrentId(id);
+    window.location.reload();
   };
   return (
     <div className="main-item-container">
